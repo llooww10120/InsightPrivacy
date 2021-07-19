@@ -1,0 +1,120 @@
+				 
+			img{
+				max-width: 100%; 
+				height: auto;
+			}
+		
+ 
+
+	form#WarehouseSearchForm {
+	   width: 250px;
+	}
+	footer#footer-widget #footer-bottom ul li {
+	   padding: 5px 35px;
+	}
+	footer#footer-widget #footer-list .footer-items .footer-list .footer-column-title {
+	   margin-top: 10px;
+	   font-weight: bolder;
+	}
+
+	@media only screen and (min-width:769px){
+	footer.main-footer a {
+	   font-size: 16px;
+	}
+	}
+	@media only screen and (max-width:768px){
+	footer.main-footer a {
+	   font-size: 18px;
+	}
+	.show-mobile-au {
+		display: block;
+	}
+	.app-icon {
+			position: relative;
+			display: block;
+			height: 45px;
+		}
+	.margin-bottom-2 {
+		margin-bottom: 2rem;
+	}
+	
+	.fi-social-kakaostory {
+	   width: 32px;
+	   display: inline-block;
+	   height: 34px;
+	   background: url('/mediapermalink/icn_kakaostory') no-repeat left 3px;
+	   background-size: 32px;
+	   vertical-align: text-bottom;
+	   }
+	}
+	@media only screen and (min-width: 1024px) {
+	.footer-copyright {
+	   width: 100%;
+	   clear: both;
+	   margin: 0 auto;
+	   text-align: center;
+	   font-size: 14px;;
+	}
+	.footer-company {
+	   width: 73%;
+	   float: left;
+	   margin: 0 auto;
+	   text-align: left;
+	   font-size: 14px;
+	   padding: 10px;
+	}
+	.footer-information {
+	   width: 25%;
+	   float: left;
+	   margin: 0 auto;
+	   text-align: left;
+	   font-size: 14px;
+	   padding: 10px;
+	}
+	.app-icon {
+		position: relative;
+		display: block;
+		<!-- height: 50px; -->
+	}
+	.show-mobile-tw{
+		display:none;
+	}
+	}
+	@media only screen and (max-width: 1023px) {
+	.footer-copyright {
+	   width: 100%;
+	   clear: both;
+	   margin: 0 auto;
+	   text-align: center;
+	   font-size: 14px;;
+	}
+	.footer-company {
+	   width: 100%;
+	   clear: both;
+	   margin: 0 auto;
+	   text-align: left;
+	   font-size: 14px;
+	   padding: 10px;
+	}
+	.footer-information {
+	   width: 100%;
+	   clear: both;
+	   margin: 0 auto;
+	   text-align: left;
+	   font-size: 14px;
+	   padding: 10px;
+	}
+	}
+	
+ 
+關於我們
+會員中心
+客服中心
+賣場相關服務
+廠商與供應商相關
+Language selection
+好市多線上購物已採行隱私權聲明，您應參閱該隱私權聲明以充份瞭解本公司如何使用及蒐集資料。
+食品業登錄字號： A-196972798-00031-9。
+Costco Wholesale Taiwan and ©Costco Wholesale Corporation 2021.
+©All Rights Reserved.
+ 
