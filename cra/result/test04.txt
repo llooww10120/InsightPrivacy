@@ -1,9 +1,270 @@
-				 
-			img{
-				max-width: 100%; 
-				height: auto;
-			}
-		
+
+
+.select_oline_pp, .select_whs_pp {
+	width: 49.5%;
+	border: 1px solid #d8d8d8;
+	float: left;
+	text-align: center;
+	line-height: 1.8;
+	font-size: 22px;
+	text-decoration: none;
+	color: black;
+}
+.select_oline_pp:hover, .select_whs_pp:hover {
+	color: white;
+	background-color: #666666;
+	text-decoration: none;
+}
+.br {
+	line-height: 10px;
+}
+.title {
+	text-align: center;
+	border-top: 0px #FFFFFF;
+}
+.agreement dl#a ol li {
+	list-style: decimal;
+	margin-left: 35px;
+}
+.agreement dl#b ol li {
+	list-style: disc;
+	margin-left: 35px;
+}
+.agreement dl#c ol li {
+	list-style: disc;
+	margin-left: 35px;
+}
+.agreement dl#i ol li {
+	list-style: decimal;
+	margin-left: 35px;
+}
+body {
+	width: 100%;
+	padding: 0;
+	border: 0;
+	margin: 0 auto;
+	font-family: 微軟正黑體;
+}
+.li {
+	list-style: none;
+}
+.description {
+	text-align: center;
+	margin: 0 auto;
+}
+.description p {
+	width: 100%;
+	text-align: left;
+	font-size: 14pt;
+	line-height: 1.5;
+	font-family: Nanumgothic,微軟正黑體, sans-serif;
+}
+.agreement dl dd {
+	font-size: 16pt;
+	line-height: 1.5;
+}
+.content_nav {
+	width: 95%;
+	max-width: 992px;
+	margin: 0 auto;
+	text-align: center;
+	display: inline-block;
+}
+.content_nav .container {
+	width: 95%;
+	display: inline-block;
+	font-family: Nanumgothic, 微軟正黑體, sans-serif;
+}
+.content_nav .container ul li {
+	float: left;
+	width: 33.3%;
+	padding: 15px 0;
+	border: 1px solid #d8d8d8;
+	text-align: center;
+	margin-left: -1px;
+	font-size: 14px;
+}
+.content_nav .container ul li.selected {
+	border: 1px solid #d8d8d8;
+	background: #4b4b4b;
+	color: white;
+	font-weight: bold;
+}
+.content_nav .container ul li:hover {
+	background: #9c9c9c;
+}
+@media (max-width: 640px) {
+.content_nav .container ul li {
+	float: left;
+	width: 33.3%;
+	padding: 5px 0;
+	height: 50px;
+	border: 1px solid #d8d8d8;
+	text-align: center;
+	margin-left: -1px;
+	font-size: 14px;
+}
+}
+@media (min-width: 640px) {
+.content_nav .container ul li {
+	float: left;
+	width: 33.3%;
+	padding: 15px 0;
+	border: 1px solid #d8d8d8;
+	text-align: center;
+	margin-left: -1px;
+	font-size: 18px;
+}
+}
+.header {
+	text-align: center;
+}
+.header p {
+	font-size: 16px;
+	margin-top: 3em;
+}
+.wheader h1 {
+	font-size: 3em;
+	font-weight: 400;
+	font-family: Nanumgothic, 微軟正黑體, sans-serif;
+	margin-top: 0.2em;
+}
+@media (max-width: 640px) {
+.header p {
+	font-size: 18px;
+}
+.header h1 {
+	font-size: 2em;
+}
+}
+@media (min-width: 640px) {
+.header p {
+	font-size: 16px;
+}
+.header h1 {
+	font-size: 3em;
+}
+}
+.h2 {
+	font-size: 16px;
+	line-height: 12px;
+}
+.list_consent {
+	position: relative;
+	clear: both;
+	display: block;
+	border-top: 1px solid #0060a9;
+	margin-top: 20px;
+	border-bottom: 1px solid #0060a9;
+}
+.list_consent .list {
+	float: left;
+	width: 49%;
+	list-style: none;
+}
+.list_consent .list ul {
+	margin-top: 10px;
+	margin-bottom: 1em;
+	list-style: none;
+}
+.list_consent .list ul li {
+	text-align: left;
+	font-size: 22px;
+	margin-top: 1em;
+	line-height: 100%;
+	font-weight: 600;
+	list-style: none;
+}
+.list_consent .list ul li ul {
+	margin-bottom: 1em;
+	margin-left: 12px;
+}
+.list_consent .list ul li ul li {
+	text-align: left;
+	font-size: 15px;
+	line-height: 140%;
+	font-weight: 400;
+	color: black;
+}
+.list_consent .list ul li a {
+	text-decoration: none;
+	color: black;
+}
+.list_consent .list ul li ul li a {
+	text-decoration: none;
+	color: black;
+}
+.list_consent hr {
+	border: 1px solid #cecece;
+	border-width: 1px 0 0 0;
+	height: 1px;
+	clear: both;
+	display: block;
+}
+.hr {
+	border: 1px solid #cecece;
+	border-width: 1px 0 0 0;
+	height: 1px;
+	clear: both;
+	display: block;
+	margin-top: 20px;
+}
+@media (max-width: 640px) {
+.list_consent .title {
+	clear: both;
+	width: 100%;
+	text-align: left;
+}
+.list_consent .list {
+	clear: both;
+	width: 100%;
+}
+}
+@media (min-width: 640px) {
+.list_consent .title {
+	float: left;
+	width: 20%;
+	text-align: left;
+}
+.list_consent .list {
+	float: left;
+	width: 45%;
+}
+}
+.agreement {
+	width: 100%;
+	display: block;
+	letter-spacing: -0.02em;
+	margin-top: 2em;
+}
+.agreement dl {
+	width: 100%;
+	display: block;
+	text-align: left;
+	margin-top: 2em;
+	line-height: 25px;
+}
+.agreement dl dt {
+	font-size: 14pt;
+	font-weight: 600;
+	line-height: 1.5;
+}
+.agreement dl dd {
+	font-size: 14pt;
+}
+
+
+最近更新日期 : 2020 年 3 月
+
+			本隱私權聲明(亦稱之為好市多的隱私權政策)係向下列客戶說明本公司的隱私權作業方式：
+
+			（一）在世界各地之好市多量販店進行採購之客戶；或 
+			（二）使用本公司網站www.costco.com.tw 之客戶。
+
+好市多對於隱私之承諾 
+			本公司尊重您的隱私權。本公司遵循個人資料保護法蒐集、處理及利用您的個人資料。除了本隱私權聲明所定情形外，未經您的事前書面同意，本公司絕不出售、出租、分享或揭露您個人資料予第三人。 
+			
+			此外，您在經告知之情況對於您個人資料之使用有選擇權對本公司而言係屬重要之事。本隱私權聲明說明本公司如何蒐集、處理、利用、揭露及保護個人資料之政策。下方連結提供有關本公司隱私權作業之詳細資料：
  
 
 	form#WarehouseSearchForm {
@@ -112,6 +373,7 @@
 客服中心
 賣場相關服務
 廠商與供應商相關
+   臺灣
 Language selection
 好市多線上購物已採行隱私權聲明，您應參閱該隱私權聲明以充份瞭解本公司如何使用及蒐集資料。
 食品業登錄字號： A-196972798-00031-9。

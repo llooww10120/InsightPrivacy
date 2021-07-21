@@ -24,14 +24,15 @@ def cra(url, count):
     html.encoding = html.apparent_encoding
     sp = BeautifulSoup(html.text, 'html.parser')
     try:
-        output = sp.find_all("p")
+        output = sp.findAll("p")
         for i in output:
-            out.append(i.string)
-        a=list(filter(None,out))
+            out.append(''.join(i.findAll(text = True)))
+        # a=list(filter(None,out))
         # format file name
         with open(os.path.join('cra', 'result', 'test{:02d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
-            f.write("\n".join(a))
-        return a
+            f.write("\n".join(out))
+            print(count)
+        return out
     except:
         print("error") 
         return out
@@ -41,7 +42,7 @@ if __name__=="__main__":
     count = 0
     fp = open(os.path.join('cra', 'privacy_link.txt'), 'r')
     for file in fp.readlines():
-        url = file
+        url = file.strip()
         count = count + 1
         cra(url, count)
 
