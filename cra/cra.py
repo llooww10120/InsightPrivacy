@@ -3,7 +3,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-def cra(url, count):
+def cra(url):
     out=[]
     html = requests.get(url)
     html.encoding = html.apparent_encoding
@@ -18,17 +18,13 @@ def cra(url, count):
         # case2: except case
         if(len(out_text) < 400):
             out_text = sp.text  #catch all text
-            out_text = out_text.replace('。', '。\n')   # use to add new line after period
+            out_text = out_text.replace('。', '\n')   # add new line after period
 
-        # format file name
-        with open(os.path.join('cra', 'result', 'test{:02d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
-            f.write(out_text)
-        return out
+        return out_text
 
     except:
-        with open(os.path.join('cra', 'result', 'test{:02d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
-            f.write('error') 
-        return out
+        out_text = 'error'
+        return out_text
         
 if __name__=="__main__":
     count = 0
@@ -38,7 +34,8 @@ if __name__=="__main__":
     for file in fp.readlines():
         url = file.strip()
         count = count + 1
-        cra(url, count)
+        with open(os.path.join('cra', 'result', '{:03d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
+            f.write(cra(url))
 
     # user input url
     # url = input()
