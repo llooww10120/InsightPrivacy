@@ -2,21 +2,6 @@ from collections import UserList
 import os
 import requests
 from bs4 import BeautifulSoup
-import re
-
-# def savetxt(output):
-#     out=[]
-#     if output.find('隱私') != -1 or output.find('隐私') != -1:
-#         head = max(output.find('隱私'), output.find('隐私'))
-#     else:
-#         head = 0
-
-#     if output.rfind('聯絡') != -1 or output.rfind('聯繫') != -1 or output.rfind('通知'):
-#         tail = max(output.rfind('聯絡'), output.rfind('聯繫'), output.rfind('通知'))    
-#     else:
-#         tail = len(output)
-#     for i in output:
-#         out.append(str(i)[3:-4])
 
 def cra(url, count):
     out=[]
@@ -24,22 +9,31 @@ def cra(url, count):
     html.encoding = html.apparent_encoding
     sp = BeautifulSoup(html.text, 'html.parser')
     try:
+        # case1: search "p" first
         output = sp.findAll("p")
         for i in output:
             out.append(''.join(i.findAll(text = True)))
-        # a=list(filter(None,out))
+        out_text = "\n".join(out)
+
+        # case2: except case
+        if(len(out_text) < 400):
+            out_text = sp.text  #catch all text
+            out_text = out_text.replace('。', '。\n')   # use to add new line after period
+
         # format file name
         with open(os.path.join('cra', 'result', 'test{:02d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
-            f.write("\n".join(out))
-            print(count)
+            f.write(out_text)
         return out
+
     except:
-        print("error") 
+        with open(os.path.join('cra', 'result', 'test{:02d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
+            f.write('error') 
         return out
         
 if __name__=="__main__":
-    # privacy website test
     count = 0
+
+    # privacy link test
     fp = open(os.path.join('cra', 'privacy_link.txt'), 'r')
     for file in fp.readlines():
         url = file.strip()
@@ -49,5 +43,6 @@ if __name__=="__main__":
     # user input url
     # url = input()
     # if url!='exit':
-    #     cra(url)
+    #     count = count + 1
+    #     cra(url, count)
     

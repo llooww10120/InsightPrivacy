@@ -1,7 +1,7 @@
 https://1922.gov.tw/vas/info5.html
 https://terms.alicdn.com/legal-agreement/terms/suit_bu1_tmall/suit_bu1_tmall201801031144_60809.html
 https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
-https://www.costco.com.tw/PrivacyPolicy
+https://law.moj.gov.tw/Service/Privacy.aspx
 https://www.ikea.com.tw/zh/customerservice/about-shopping/terms-and-conditions/terms-of-use
 https://aws.amazon.com/tw/compliance/data-privacy-faq/
 https://shopee.tw/docs/3589
@@ -9,9 +9,8 @@ https://www.ey.gov.tw/Page/806F6058055F6695
 https://www.interinfo.com.tw/web/company/Privacy.html
 https://www.edu.tw/News_Content.aspx?n=9F932B3D33DCCF6B&sms=15283ECA9D7F60AA&s=C046940F587A693C
 https://www.bilibili.com/blackboard/privacy-pc.html
-https://www.xiaohongshu.com/privacy
-https://www.douyin.com/agreements/?id=6773901168964798477
-https://weibo.com/signup/v5/privacy
+https://www.ibm.com/tw-zh/privacy
+https://www.bonuswinner.com.tw/winner/page/privacy.html
 https://www.riotgames.com/en/privacy-notice-ZH
 https://store.steampowered.com/eula/453480_eula_1?eulaLang=tchinese
 https://www.blizzard.com/zh-tw/legal/5228219c-6411-4f2f-a45b-9399069538ea/%E7%B7%9A%E4%B8%8A%E9%9A%B1%E7%A7%81%E6%AC%8A%E6%94%BF%E7%AD%96
@@ -20,3 +19,4 @@ https://www.apple.com/legal/privacy/tzh/
 https://policies.google.com/privacy?hl=zh-TW
 https://www.facebook.com/about/privacy/update
 https://line.me/zh-hant/terms/policy/
+https://www.mi.com/tw/about/privacy/
