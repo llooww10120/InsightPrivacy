@@ -16,7 +16,7 @@ def cra(url):
         out_text = "\n".join(out)
 
         # case2: except case
-        if(len(out_text) < 400):
+        if(len(out_text) < 700):
             out_text = sp.text  #catch all text
             out_text = out_text.replace('。', '\n')   # add new line after period
 
