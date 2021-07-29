@@ -1,6 +1,6 @@
 https://1922.gov.tw/vas/info5.html
-https://terms.alicdn.com/legal-agreement/terms/suit_bu1_tmall/suit_bu1_tmall201801031144_60809.html
-https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
+https://www.pcone.com.tw/service/terms
+https://www.rakuten.com.tw/policy/privacy/
 https://law.moj.gov.tw/Service/Privacy.aspx
 https://www.ikea.com.tw/zh/customerservice/about-shopping/terms-and-conditions/terms-of-use
 https://aws.amazon.com/tw/compliance/data-privacy-faq/
@@ -20,3 +20,9 @@ https://policies.google.com/privacy?hl=zh-TW
 https://www.facebook.com/about/privacy/update
 https://line.me/zh-hant/terms/policy/
 https://www.mi.com/tw/about/privacy/
+https://www.adobe.com/tw/privacy/policy.html
+http://www.fmt.com.tw/index.php?option=com_content&view=article&id=97&Itemid=0
+https://www.myfone.com.tw/buy/index.php?action=privacy
+https://www.verizonmedia.com/policies/tw/zh-hant/verizonmedia/terms/otos/index.html
+https://www.books.com.tw/services/privacy.htm
+https://www.dropbox.com/zh_TW/privacy
