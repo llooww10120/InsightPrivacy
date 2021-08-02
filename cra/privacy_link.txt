@@ -6,9 +6,9 @@ https://www.ikea.com.tw/zh/customerservice/about-shopping/terms-and-conditions/t
 https://aws.amazon.com/tw/compliance/data-privacy-faq/
 https://shopee.tw/docs/3589
 https://www.ey.gov.tw/Page/806F6058055F6695
-https://www.interinfo.com.tw/web/company/Privacy.html
+https://www.cht.com.tw/home/consumer/privacy
 https://www.edu.tw/News_Content.aspx?n=9F932B3D33DCCF6B&sms=15283ECA9D7F60AA&s=C046940F587A693C
-https://www.bilibili.com/blackboard/privacy-pc.html
+https://www.irentcar.com.tw/privacy.html
 https://www.ibm.com/tw-zh/privacy
 https://www.bonuswinner.com.tw/winner/page/privacy.html
 https://www.riotgames.com/en/privacy-notice-ZH
@@ -26,3 +26,5 @@ https://www.myfone.com.tw/buy/index.php?action=privacy
 https://www.verizonmedia.com/policies/tw/zh-hant/verizonmedia/terms/otos/index.html
 https://www.books.com.tw/services/privacy.htm
 https://www.dropbox.com/zh_TW/privacy
+https://www.asus.com/tw/Terms_of_Use_Notice_Privacy_Policy/Privacy_Policy/
+https://www.kkbox.com/about/zh-tw/privacy
