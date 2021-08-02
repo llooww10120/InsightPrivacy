@@ -1,6 +1,6 @@
 https://1922.gov.tw/vas/info5.html
-https://terms.alicdn.com/legal-agreement/terms/suit_bu1_tmall/suit_bu1_tmall201801031144_60809.html
-https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
+https://www.pcone.com.tw/service/terms
+https://www.rakuten.com.tw/policy/privacy/
 https://law.moj.gov.tw/Service/Privacy.aspx
 https://www.ikea.com.tw/zh/customerservice/about-shopping/terms-and-conditions/terms-of-use
 https://aws.amazon.com/tw/compliance/data-privacy-faq/
@@ -12,7 +12,7 @@ https://www.bilibili.com/blackboard/privacy-pc.html
 https://www.ibm.com/tw-zh/privacy
 https://www.bonuswinner.com.tw/winner/page/privacy.html
 https://www.riotgames.com/en/privacy-notice-ZH
-https://store.steampowered.com/eula/453480_eula_1?eulaLang=tchinese
+https://www.cygames.com.tw/policy/
 https://www.blizzard.com/zh-tw/legal/5228219c-6411-4f2f-a45b-9399069538ea/%E7%B7%9A%E4%B8%8A%E9%9A%B1%E7%A7%81%E6%AC%8A%E6%94%BF%E7%AD%96
 https://www.wechat.com/zh_TW/privacy_policy.html
 https://www.apple.com/legal/privacy/tzh/
@@ -20,3 +20,9 @@ https://policies.google.com/privacy?hl=zh-TW
 https://www.facebook.com/about/privacy/update
 https://line.me/zh-hant/terms/policy/
 https://www.mi.com/tw/about/privacy/
+https://www.adobe.com/tw/privacy/policy.html
+http://www.fmt.com.tw/index.php?option=com_content&view=article&id=97&Itemid=0
+https://www.myfone.com.tw/buy/index.php?action=privacy
+https://www.verizonmedia.com/policies/tw/zh-hant/verizonmedia/terms/otos/index.html
+https://www.books.com.tw/services/privacy.htm
+https://www.dropbox.com/zh_TW/privacy
