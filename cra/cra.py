@@ -17,12 +17,13 @@ def cra(url):
         for i in output:
             out.append(''.join(i.findAll(text = True)))
         out_text = "\n".join(out)
+        out_text = out_text.replace('。', '。\n')
 
         # case2: except case
         if(len(out_text) < 700):
             # print('case2')
             out_text = sp.body.text  #catch all text
-            out_text = out_text.replace('。', '\n')   # add new line after period
+            out_text = out_text.replace('。', '。\n')   # add new line after period
 
         return out_text
 

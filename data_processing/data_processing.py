@@ -38,5 +38,9 @@ if __name__=="__main__":
         with open(os.path.join('data_processing', 'csv', '{}.csv'.format(fl[:3])), 'w', newline='', encoding="utf-8-sig") as f:
             writer = csv.writer(f)
             lines = open(os.path.join('cra', 'result', fl),'r', encoding='utf-8-sig').read().split('\n')
+            # lines = lines.replace('。', '\n')
             for line in lines:
-                writer.writerow([line, compare(line, table)])
+                if line == '':
+                    continue
+                else:
+                    writer.writerow([line, compare(line, table)])
