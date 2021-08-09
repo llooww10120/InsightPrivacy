@@ -43,4 +43,4 @@ if __name__=="__main__":
                 if line == '':
                     continue
                 else:
-                    writer.writerow([line, compare(line, table)])
+                    writer.writerow([line, compare(line, table), 0])
