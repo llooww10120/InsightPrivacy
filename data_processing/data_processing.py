@@ -3,8 +3,7 @@ from tqdm import tqdm
 
 def readTable():
     with open(os.path.join('data_processing', 'table.csv'), newline='',encoding="utf-8-sig") as f:
-
-
+        
         rows = csv.reader(f)
         table = []
 
