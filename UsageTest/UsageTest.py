@@ -26,6 +26,9 @@ if __name__=="__main__":
     model = BertForSequenceClassification.from_pretrained(PRETRAINED_MODEL_NAME, num_labels=NUM_LABELS)
     clear_output()
 
+    PATH="bert20210821.pth"
+    checkpoint = torch.load(PATH,map_location=torch.device('cpu'))
+    model.load_state_dict(checkpoint)
 
     text="您的資料將用於網站的維護及改善"
     pred1 = usagetest(text,model)
