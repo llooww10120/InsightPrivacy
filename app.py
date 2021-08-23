@@ -26,13 +26,12 @@ def callback():
     return 'OK'
 
 # 學你說話
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=ImageMessage)
 def echo(event):
-    
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="哈哈翔宇很幽默欸")
+            ImageSendMessage(original_content_url='https://imgur.com/ae1ImwP', preview_image_url='https://imgur.com/ae1ImwP')
         )
 
 if __name__ == "__main__":
