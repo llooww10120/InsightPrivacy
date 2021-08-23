@@ -67,7 +67,7 @@ def CreatePic():
     cv2.destroyWindow('Ouput')
 
     #輸出圖片檔
-    cv2.imwrite('result.jpg', cv2img)
+    cv2.imwrite('Output.jpg', cv2img)
 
 #避免引用檔案時
 if __name__== "__main__":
