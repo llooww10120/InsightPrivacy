@@ -5,27 +5,32 @@ from cv2 import cv2
 from PIL import ImageFont, ImageDraw, Image
 
 
-def DrawPic(draw, font):
+def openfile(file1, file2):
+    with open(file1, 'r', encoding='utf8') as f1:
+        input = f1.readlines()
+    with open(file2, 'r', encoding='utf8') as f2:
+        module = f2.readlines()
+    list = []
+    for line in range(len(module)):
+        if module[line] == '1\n':
+            temp = input[line]
+            final = temp.split('，')
+            for i in range(len(final)):
+                list.append(final[i])
+    return list
+
+
+
+def DrawPic(draw, font, output):
     #this function will be used until the output of label will be done.
 
     InsightPrivacy = "InsightPrivacy "
-
-    gain_data = '索取資料:\n'
-    gain_text = "個人檔案資料\n" + "發佈的文字、圖片、影片\n" + "其他用戶發佈關於您的照片\n"
-
-    using_way = "用途:\n"
-    using_text = "提供及維護服務\n" + "開發及改善服務\n" + "安全性及防止未經授權的使用\n" + "為您提供優化內容\n"
-
-    precaution = "注意事項:\n"
-    precaution_text = "刪除帳號後，企業會保存你的資料一段時間，而契約中無法得知一段時間是指多久\n"
-
-    draw.text((350, 50), InsightPrivacy, font=font, align="center", fill="BLUE", size=1000)
-    draw.text((10, 120), gain_data, font=font, align="left", spacing=5)
-    draw.text((10, 140), gain_text, font=font, spacing=2)
-    draw.text((10, 220), using_way, font=font, align="left", spacing=5)
-    draw.text((10, 240), using_text, font=font, spacing=2)
-    draw.text((10, 320), precaution, font=font, align="left", spacing=5)
-    draw.text((10, 340), precaution_text, font=font, spacing=2)
+    position_x = 10
+    position_y = 120
+    draw.text((500, 50), InsightPrivacy, font=font, align="center", fill="BLUE", size=10000)
+    for index in range(len(output)):
+        draw.text((position_x, position_y), output[index], font=font, align="left", spacing=5)
+        position_y += 40
     return
 
 
@@ -36,21 +41,21 @@ def AddTransparency(top, bottom):
     return overlapping
 
 
-def CreatePic():
+def CreatePic(output):
 
     img = cv2.imread('background.jpg')
     bottomimg = cv2.imread('background.jpg')
     img = AddTransparency(img, bottomimg)
 
-    img = cv2.resize(img, (900, 500))
+    img = cv2.resize(img, (1500, 1000))
 
     imgPillow = Image.fromarray(img)
 
     draw = ImageDraw.Draw(imgPillow)
 
-    font = ImageFont.truetype('simhei.ttf', 20, encoding='utf-8')
+    font = ImageFont.truetype('simhei.ttf', 30, encoding='utf-8')
 
-    DrawPic(draw, font)
+    DrawPic(draw, font, output)
 
     img = np.array(imgPillow)
 
@@ -61,4 +66,5 @@ def CreatePic():
     cv2.imwrite('result.jpg', img)
 
 if __name__== "__main__":
-    CreatePic()
+    output = openfile('input.txt', 'module_output.txt')
+    CreatePic(output)
