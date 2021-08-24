@@ -3,7 +3,7 @@ import os
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
 app = Flask(__name__)
 
 # LINE 聊天機器人的基本資料
@@ -26,13 +26,14 @@ def callback():
     return 'OK'
 
 # 學你說話
-@handler.add(MessageEvent, message=ImageMessage)
+@handler.add(MessageEvent, message=TextMessage)
 def echo(event):
+    message=ImageSendMessage(original_content_url="https://i.imgur.com/ae1ImwP.jpg",preview_image_url="https://i.imgur.com/ae1ImwP.jpg")
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
-        line_bot_api.reply_message(
-            event.reply_token,
-            ImageSendMessage(original_content_url='https://imgur.com/ae1ImwP', preview_image_url='https://imgur.com/ae1ImwP')
-        )
+            line_bot_api.reply_message(
+                event.reply_token,message
+                # TextSendMessage(text="https://imgur.com/ae1ImwP")
+            )
 
 if __name__ == "__main__":
     app.run()
