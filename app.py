@@ -25,10 +25,10 @@ def callback():
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
-        
+
     return 'OK'
 
-# 學你說話
+# 
 @handler.add(MessageEvent, message=TextMessage)
 def echo(event):
     message=ImageSendMessage(original_content_url="https://i.imgur.com/ae1ImwP.jpg",preview_image_url="https://i.imgur.com/ae1ImwP.jpg")
