@@ -4,9 +4,18 @@ import numpy as np
 from cv2 import cv2
 from PIL import ImageFont, ImageDraw, Image
 
+output_list = [
+        ['聯絡資訊', '住址', '工作地址', '以前地址', '住家電話號碼', '行動電話', '即時通帳號', '網路平臺申請之帳號', '通訊及戶籍地址',
+            '相片', '指紋', '電子郵遞地址', '電子簽章', '憑證卡序號', '憑證序號', '提供網路身分認證或申辦查詢服務之紀錄', '電子信箱'],
+        ['財務資訊', '金融機構帳戶之號碼與姓名', '信用卡或簽帳卡之號碼', '保險單號碼', '個人之其他號碼或帳戶'],
+        ['姓名', '生日', '名字'],
+        ['身分證號', '統一編號', '身分證統一編號', '統一證號', '稅籍編號', '保險憑證號碼',
+            '殘障手冊號碼', '退休證之號碼', '證照號碼', '護照號碼', '身分證字號'],
+        ['瀏覽資訊 IP 位址', '設備資訊', '藍芽聯絡人', '郵遞區號', '手機製造商', '手機型號', 'UDID']
+    ]
 
 #output
-def DrawPic(draw, font,output_list):
+def DrawPic(draw, font, output_list):
 
     Array_Row_Number = len(output_list)
     Array_Column_Number = len(output_list[0])
@@ -18,7 +27,7 @@ def DrawPic(draw, font,output_list):
     y = 120
     for index_r in range(Array_Row_Number):
         for index_c in range(Array_Column_Number):
-            draw.multiline_text((x, y), col[index_c], fill=(128,128,105), font=font,align='center')
+            draw.multiline_text((x, y), Array_Column_Number[index_c], fill=(128,128,105), font=font,align='center')
             x += 160
         x = 10
         y += 100
@@ -49,8 +58,8 @@ def DrawPic(draw, font,output_list):
     draw.multiline_text((410, 220), policy_num, fill=(128,128,105), font=font)
     draw.multiline_text((550, 220), personal_num, fill=(128,128,105), font=font,align='center')
     
-    return'''
-
+    return
+'''
 
 
 
@@ -71,7 +80,7 @@ def CreatePic():
     #在圖片上加入文字
     draw = ImageDraw.Draw(imgPil)
     font = ImageFont.truetype('simhei.ttf', 20, encoding='utf-8')
-    DrawPic(draw, font)
+    DrawPic(draw, font, output_list)
 
     #將PIL轉回Numpy陣列
     cv2charimg = cv2.cvtColor(np.array(imgPil), cv2.COLOR_RGB2BGR)
