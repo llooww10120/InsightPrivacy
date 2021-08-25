@@ -5,15 +5,11 @@ from cv2 import cv2
 from PIL import ImageFont, ImageDraw, Image
 
 
-def openfile(file1, file2):
-    with open(file1, 'r', encoding='utf8') as f1:
-        input = f1.readlines()
-    with open(file2, 'r', encoding='utf8') as f2:
-        module = f2.readlines()
+def listToResult(cra, module):
     list = []
     for line in range(len(module)):
-        if module[line] == '1\n':
-            temp = input[line]
+        if module[line] == '1':
+            temp = cra[line]
             final = temp.split('，')
             for i in range(len(final)):
                 list.append(final[i])
@@ -65,6 +61,20 @@ def CreatePic(output):
 
     cv2.imwrite('result.jpg', img)
 
-if __name__== "__main__":
-    output = openfile('input.txt', 'module_output.txt')
+def getListToCreatePic(cra, module):
+
+    output = listToResult(cra, module)
+
     CreatePic(output)
+    return
+
+
+#if __name__== "__main__":
+    #list1 = input('the cra list:'"ex:['你好，妮妮。', '結束。']")
+    #cra = eval(list1)
+    #list2 = input('the module list:'"ex:['0', '1']")
+    #module = eval(list2)
+    #print(cra)
+    #print(module)
+    #output = openfile(cra, module)
+    #CreatePic(output)
