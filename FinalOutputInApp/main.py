@@ -10,7 +10,7 @@ def listToResult(cra, module):
     for line in range(len(module)):
         if module[line] == '1':
             temp = cra[line]
-            final = temp.split('，')
+            final = temp.split('；')
             for i in range(len(final)):
                 list.append(final[i])
     return list
@@ -23,16 +23,18 @@ def DrawPic(draw, font, output):
     InsightPrivacy = "InsightPrivacy "
     position_x = 10
     position_y = 120
-    draw.text((500, 50), InsightPrivacy, font=font, align="center", fill="BLUE", size=10000)
+    Tfont = ImageFont.truetype('simhei.ttf', 40, encoding='utf-8')
+
+    draw.text((500, 50), InsightPrivacy, font=Tfont, align="center", fill="BLUE", size=10000)
     for index in range(len(output)):
         draw.text((position_x, position_y), output[index], font=font, align="left", spacing=5)
-        position_y += 40
+        position_y += 20
     return
 
 
 def AddTransparency(top, bottom):
 
-    overlapping = cv2.addWeighted(bottom, 0.1, top, 0.2, 0)
+    overlapping = cv2.addWeighted(bottom, 0.1, top, 0.6, 0)
 
     return overlapping
 
@@ -43,13 +45,13 @@ def CreatePic(output):
     bottomimg = cv2.imread('background.jpg')
     img = AddTransparency(img, bottomimg)
 
-    img = cv2.resize(img, (1500, 1000))
+    img = cv2.resize(img, (2000, 1000))
 
     imgPillow = Image.fromarray(img)
 
     draw = ImageDraw.Draw(imgPillow)
 
-    font = ImageFont.truetype('simhei.ttf', 30, encoding='utf-8')
+    font = ImageFont.truetype('simhei.ttf', 20, encoding='utf-8')
 
     DrawPic(draw, font, output)
 
