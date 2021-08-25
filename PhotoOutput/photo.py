@@ -1,17 +1,29 @@
 #main.py
-
 # -*- coding: utf-8 -*-
 import numpy as np
+from data_processing import data_processing as data_processing
 from cv2 import cv2
 from PIL import ImageFont, ImageDraw, Image
 
- 
-def DrawPic(draw, font):
+
+#僅供測試
+def DrawPic(draw, font,row,col):
 
     InsightPrivacy = "InsightPrivacy "
     draw.text((350, 50), InsightPrivacy, font=font, align="center", fill=(41,36,33), size=1000)
     
-    contact_data = '聯絡資訊: '
+    x = 10
+    y = 120
+    for index_r in range(len(row)):
+        for index_c in range(len(col)):
+            draw.multiline_text((x, y), col[index_c], fill=(128,128,105), font=font,align='center')
+            x += 160
+        x = 10
+        y += 100
+        return
+
+
+''' contact_data = '聯絡資訊: '
     live_space = " 住址 " 
     work_space = " 工作地址 "
     mobile_number = " 行動電話\n號碼 "
@@ -35,7 +47,8 @@ def DrawPic(draw, font):
     draw.multiline_text((410, 220), policy_num, fill=(128,128,105), font=font)
     draw.multiline_text((550, 220), personal_num, fill=(128,128,105), font=font,align='center')
     
-    return
+    return'''
+
 
 
 
@@ -63,11 +76,10 @@ def CreatePic():
 
     #呈現在螢幕上,除錯
     cv2.imshow('Ouput', cv2charimg)
-    cv2.waitKey(100000)
-    cv2.destroyWindow('Ouput')
+    cv2.waitKey(0)
 
     #輸出圖片檔
-    cv2.imwrite('Output.jpg', cv2img)
+    cv2.imwrite('Output.jpg', cv2charimg)
 
 #避免引用檔案時
 if __name__== "__main__":
