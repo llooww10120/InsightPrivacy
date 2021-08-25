@@ -34,7 +34,6 @@ def DrawPic(draw, font, output_list):
     draw.multiline_text((250, 120), work_space, fill=(128,128,105), font=font)
     draw.multiline_text((410, 120), mobile_number, fill=(128,128,105), font=font,align='center')
     draw.multiline_text((550, 120), phone_number, fill=(128,128,105), font=font) 
-
     
     financial_data = '財務資訊: '
     financial_num = " 金融機構帳戶\n  之號碼與姓名 " 
@@ -79,7 +78,7 @@ def CreatePic():
     
     #在圖片上加入文字
     draw = ImageDraw.Draw(imgPil)
-    font = ImageFont.truetype('simhei.ttf', 20, encoding='utf-8')
+    font = ImageFont.truetype('SimHei.ttf', 20, encoding='utf-8')
     DrawPic(draw, font, output_list)
 
     #將PIL轉回Numpy陣列
