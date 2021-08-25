@@ -1,6 +1,5 @@
 import torch
 from transformers import BertTokenizer
-# from IPython.display import clear_output
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch.nn.utils.rnn import pad_sequence
@@ -14,7 +13,7 @@ class ClauseDataset(Dataset):
         self.tokenizer=tokenizer
         self.len=len(self.text)
     def __getitem__(self,idx):
-        tokens=tokenizer(self.text[idx],padding=True,truncation=True,max_length=512)
+        tokens=self.tokenizer(self.text[idx],padding=True,truncation=True,max_length=512)
         ids=tokens["input_ids"]
         segments=tokens["token_type_ids"]
         masks =tokens["attention_mask"]
@@ -82,7 +81,18 @@ def get_predictions(model, dataloader, compute_acc=False):
         return predictions, acc
     return predictions
 #給其他程式呼叫的函式
-def usagetest(text,model):
+def usagetest(text):
+    PRETRAINED_MODEL_NAME = "bert-base-chinese"
+
+    NUM_LABELS = 2
+    model = BertForSequenceClassification.from_pretrained(PRETRAINED_MODEL_NAME, num_labels=NUM_LABELS)
+    #path為model所放的位置
+    PATH="bert20210821.pth"
+    #因為gpu不可用時會出錯 因此加上後面的參數強制用cpu跑
+    checkpoint = torch.load(PATH,map_location=torch.device('cpu'))
+    model.load_state_dict(checkpoint)
+
+
     model.eval()
     PRETRAINED_MODEL_NAME = "bert-base-chinese"
     tokenizer = BertTokenizer.from_pretrained(PRETRAINED_MODEL_NAME)
@@ -93,18 +103,6 @@ def usagetest(text,model):
     return predictions.tolist()
 
 if __name__=="__main__":
-
-    PRETRAINED_MODEL_NAME = "bert-base-chinese"
-
-    NUM_LABELS = 2
-    model = BertForSequenceClassification.from_pretrained(PRETRAINED_MODEL_NAME, num_labels=NUM_LABELS)
-    clear_output()
-    #path為model所放的位置
-    PATH="bert20210821.pth"
-    #因為gpu不可用時會出錯 因此加上後面的參數強制用cpu跑
-    checkpoint = torch.load(PATH,map_location=torch.device('cpu'))
-    model.load_state_dict(checkpoint)
-
     text1=["您的資料將用於網站的維護及改善","我們將不會隨意刪除您的資料"]
-    pre=usagetest(text1,model)
+    pre=usagetest(text1)
     print(pre)
