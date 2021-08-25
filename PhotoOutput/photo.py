@@ -37,7 +37,7 @@ def DrawPic(draw, font, output_list):
 
 
 
-def CreatePic():
+def CreatePic(output_list):
     '''
     output_list = [
         ['聯絡資訊', '住址', '工作地址', '以前地址', '住家電話\n號碼', '行動電話', '即時通帳號', '網路平臺\n申請之帳號', '通訊及戶籍\n地址',
