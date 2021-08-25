@@ -18,30 +18,33 @@ def cra(url):
             out.append(''.join(i.findAll(text = True)))
         out_text = "\n".join(out)
         out_text = out_text.replace('。', '。\n')
+        final_out_text = out_text.split('\n')
 
         # case2: except case
         if(len(out_text) < 700):
             # print('case2')
             out_text = sp.body.text  #catch all text
             out_text = out_text.replace('。', '。\n')   # add new line after period
+            final_out_text = out_text.split('\n')
 
-        return out_text
+        return final_out_text
 
     except:
-        out_text = 'error'
-        return out_text
+        final_out_text = 'error'
+        return final_out_text
         
 if __name__=="__main__":
-    count = 0
 
+    cra(input())
+    
     # privacy link test
-    fp = open(os.path.join('cra', 'privacy_link.txt'), 'r')
-    for file in tqdm(fp.readlines(), desc='Browsing'):
-        url = file.strip()
-        count = count + 1
-        with open(os.path.join('cra', 'result', '{:03d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
-            # print(count)
-            f.write(cra(url))
+    # fp = open(os.path.join('cra', 'privacy_link.txt'), 'r')
+    # for file in tqdm(fp.readlines(), desc='Browsing'):
+    #     url = file.strip()
+    #     count = count + 1
+    #     with open(os.path.join('cra', 'result', '{:03d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
+    #         # print(count)
+    #         f.write(cra(url))
 
     # user input url
     # url = input()
