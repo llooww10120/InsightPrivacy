@@ -34,8 +34,9 @@ def callback():
 # 
 @handler.add(MessageEvent, message=TextMessage)
 def echo(event):
-    # message=ImageSendMessage(original_content_url="https://i.imgur.com/ae1ImwP.jpg",preview_image_url="https://i.imgur.com/ae1ImwP.jpg")
-    message=TextMessage(text=getedata(event.message.text))
+    # getedata(event.message.text)
+    message=ImageSendMessage(original_content_url="https://i.imgur.com/ae1ImwP.jpg",preview_image_url="https://i.imgur.com/ae1ImwP.jpg")
+    # message=TextMessage(text=getedata(event.message.text))
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
         line_bot_api.reply_message(event.reply_token,message)
 
