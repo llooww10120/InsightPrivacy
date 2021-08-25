@@ -10,45 +10,21 @@ def DrawPic(draw, font, output_list):
     Array_Row_Number = len(output_list)
 
     InsightPrivacy = "InsightPrivacy "
-    draw.text((350, 50), InsightPrivacy, font=font, align="center", fill=(41,36,33), size=1000)
+    draw.text((350, 50), InsightPrivacy, font=font, align="right", fill=(41,36,33), size=1000)
     
     x = 10
     y = 120
     for index_r in range(0,Array_Row_Number):
-        Array_Column_Number = len(output_list[Array_Row_Number])
-        for index_c in range(0,Array_Column_Number):
-            draw.multiline_text((x, y), output_list[Array_Row_Number][Array_Column_Number], fill=(128,128,105), font=font,align='center')
-            x += 160
+        Array_Column_Number = len(output_list[index_r])
         x = 10
-        y += 100
+        y = y + 100
+        for index_c in range(0,Array_Column_Number):
+            draw.multiline_text((x, y), output_list[index_r][index_c], fill=(128,128,105), font=font,align='center')
+            x += 200
+            
         return
 
 
-''' contact_data = '聯絡資訊: '
-    live_space = " 住址 " 
-    work_space = " 工作地址 "
-    mobile_number = " 行動電話\n號碼 "
-    phone_number = " 住家電話號碼 "
-    draw.multiline_text((10, 120), contact_data, fill=(41,36,33), font=font,align='left')
-    draw.multiline_text((110, 120), live_space, fill=(128,128,105), font=font)
-    draw.multiline_text((250, 120), work_space, fill=(128,128,105), font=font)
-    draw.multiline_text((410, 120), mobile_number, fill=(128,128,105), font=font,align='center')
-    draw.multiline_text((550, 120), phone_number, fill=(128,128,105), font=font) 
-    
-    financial_data = '財務資訊: '
-    financial_num = " 金融機構帳戶\n  之號碼與姓名 " 
-    credit_num = " 信用卡或簽帳卡\n之號碼 "
-    policy_num = " 保險單號碼 "
-    personal_num = " 個人之其他\n  號碼或帳戶 "
-    
-    draw.multiline_text((10, 220), financial_data, fill=(41,36,33), font=font,align='left')
-    draw.multiline_text((100, 220), financial_num, fill=(128,128,105), font=font,align='center')
-    draw.multiline_text((250, 220), credit_num, fill=(128,128,105), font=font,align='center')
-    draw.multiline_text((410, 220), policy_num, fill=(128,128,105), font=font)
-    draw.multiline_text((550, 220), personal_num, fill=(128,128,105), font=font,align='center')
-    
-    return
-'''
 
 
 
@@ -58,9 +34,7 @@ def DrawPic(draw, font, output_list):
 def CreatePic():
 
     output_list = [
-        ['聯絡資訊', '住址', '工作地址', '以前地址', '住家電話號碼', '行動電話', '即時通帳號', '網路平臺申請之帳號', '通訊及戶籍地址',
-            '相片', '指紋', '電子郵遞地址', '電子簽章', '憑證卡序號', '憑證序號', '提供網路身分認證或申辦查詢服務之紀錄', '電子信箱'],
-        ['財務資訊', '金融機構帳戶之號碼與姓名', '信用卡或簽帳卡之號碼', '保險單號碼', '個人之其他號碼或帳戶'],
+        ['聯絡資訊', '住址', '工作地址', '以前地址', '住家電話號碼', '行動電話', '即時通帳號'],
         ['姓名', '生日', '名字'],
         ['身分證號', '統一編號', '身分證統一編號', '統一證號', '稅籍編號', '保險憑證號碼',
             '殘障手冊號碼', '退休證之號碼', '證照號碼', '護照號碼', '身分證字號'],
@@ -71,7 +45,7 @@ def CreatePic():
     img = np.zeros((450, 450, 3), np.uint8) #黑背景
     cv2img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB) #如果是cv2讀取圖片才需
     cv2img[:] = (255,255,240) # 上色
-    cv2img = cv2.resize(cv2img, (900, 500))
+    cv2img = cv2.resize(cv2img, (2000, 1000))
     
     # 將numpy陣列轉換為PIL影像
     imgPil = Image.fromarray(cv2img)
