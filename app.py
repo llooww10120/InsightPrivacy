@@ -30,10 +30,7 @@ def callback():
 def echo(event):
     message=ImageSendMessage(original_content_url="https://i.imgur.com/ae1ImwP.jpg",preview_image_url="https://i.imgur.com/ae1ImwP.jpg")
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
-            line_bot_api.reply_message(
-                event.reply_token,message
-                # TextSendMessage(text="https://imgur.com/ae1ImwP")
-            )
+        line_bot_api.reply_message(event.reply_token,message)
 
 if __name__ == "__main__":
     app.run()
