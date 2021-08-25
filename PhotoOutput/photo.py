@@ -14,15 +14,18 @@ def DrawPic(draw, font, output_list):
     
     x = 10
     y = 120
-    for index_r in range(0,Array_Row_Number):
+    
+    for index_r in range(0,Array_Row_Number,1):
         Array_Column_Number = len(output_list[index_r])
+        #print(Array_Row_Number,Array_Column_Number)
         x = 10
         y = y + 100
-        for index_c in range(0,Array_Column_Number):
+        for index_c in range(0,Array_Column_Number,1):
             draw.multiline_text((x, y), output_list[index_r][index_c], fill=(128,128,105), font=font,align='center')
+            print(index_r,index_c)
             x += 200
             
-        return
+    return
 
 
 
