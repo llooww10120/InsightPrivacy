@@ -6,16 +6,19 @@ from cv2 import cv2
 from PIL import ImageFont, ImageDraw, Image
 
 
-#僅供測試
-def DrawPic(draw, font,row,col):
+#output
+def DrawPic(draw, font,output_list):
+
+    Array_Row_Number = len(output_list)
+    Array_Column_Number = len(output_list[0])
 
     InsightPrivacy = "InsightPrivacy "
     draw.text((350, 50), InsightPrivacy, font=font, align="center", fill=(41,36,33), size=1000)
     
     x = 10
     y = 120
-    for index_r in range(len(row)):
-        for index_c in range(len(col)):
+    for index_r in range(Array_Row_Number):
+        for index_c in range(Array_Column_Number):
             draw.multiline_text((x, y), col[index_c], fill=(128,128,105), font=font,align='center')
             x += 160
         x = 10
@@ -48,6 +51,7 @@ def DrawPic(draw, font,row,col):
     draw.multiline_text((550, 220), personal_num, fill=(128,128,105), font=font,align='center')
     
     return'''
+
 
 
 
