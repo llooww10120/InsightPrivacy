@@ -8,7 +8,7 @@ import configparser
 app = Flask(__name__)
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+config.read('config.ini')
 # LINE 聊天機器人的基本資料
 line_bot_api = LineBotApi(config.get('line-bot','channel_access_token'))
 handler = WebhookHandler(config.get('line-bot', 'channel_secret'))
