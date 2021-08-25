@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 def cra(url):
     out = []
     USER_AGENT_VALUE = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
@@ -46,9 +45,9 @@ def cra(url):
 
         return final_out_text
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    cra(input())
+#     cra(input())
     
     # privacy link test
     # fp = open(os.path.join('cra', 'privacy_link.txt'), 'r')
