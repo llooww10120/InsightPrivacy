@@ -8,7 +8,7 @@ from PIL import ImageFont, ImageDraw, Image
 def listToResult(cra, module):
     list = []
     for line in range(len(module)):
-        if module[line] == '1':
+        if module[line] == 1:
             temp = cra[line] 
             list.append(temp)
     return list
