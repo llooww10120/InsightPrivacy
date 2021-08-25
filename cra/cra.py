@@ -1,11 +1,9 @@
-from collections import UserList
-import os
 import requests
 from bs4 import BeautifulSoup
-from tqdm import tqdm
+
 
 def cra(url):
-    out=[]
+    out = []
     USER_AGENT_VALUE = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
     headers = {'User-Agent': USER_AGENT_VALUE}
     html = requests.get(url, headers=headers)
@@ -15,7 +13,7 @@ def cra(url):
         # case1: search "p" first
         output = sp.findAll("p")
         for i in output:
-            out.append(''.join(i.findAll(text = True)))
+            out.append(''.join(i.findAll(text=True)))
         out_text = "\n".join(out)
         out_text = out_text.replace('。', '。\n')
         final_out_text = out_text.split('\n')
@@ -23,17 +21,32 @@ def cra(url):
         # case2: except case
         if(len(out_text) < 700):
             # print('case2')
-            out_text = sp.body.text  #catch all text
-            out_text = out_text.replace('。', '。\n')   # add new line after period
+            out_text = sp.body.text  # catch all text
+            # add new line after period
+            out_text = out_text.replace('。', '。\n')
             final_out_text = out_text.split('\n')
+        
+        # remove empty row
+        try:
+            while True:
+                final_out_text.remove('')
+        except ValueError:
+            pass
+        # remove only one space row
+        try:
+            while True:
+                final_out_text.remove(' ')
+        except ValueError:
+            pass
 
         return final_out_text
 
     except:
         final_out_text = 'error'
+
         return final_out_text
-        
-if __name__=="__main__":
+
+if __name__ == "__main__":
 
     cra(input())
     
@@ -51,4 +64,3 @@ if __name__=="__main__":
     # if url!='exit':
     #     count = count + 1
     #     cra(url, count)
-    
