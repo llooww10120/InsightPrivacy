@@ -87,7 +87,7 @@ def usagetest(text):
     NUM_LABELS = 2
     model = BertForSequenceClassification.from_pretrained(PRETRAINED_MODEL_NAME, num_labels=NUM_LABELS)
     #path為model所放的位置
-    PATH="bert20210821.pth"
+    PATH=r"UsageTest\bert20210821.pth"
     #因為gpu不可用時會出錯 因此加上後面的參數強制用cpu跑
     checkpoint = torch.load(PATH,map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint)
