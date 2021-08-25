@@ -34,7 +34,7 @@ def DrawPic(draw, font, output_list):
 
 
 
-def CreatePic():
+def CreatePic(output_list):
 
     '''output_list = [
         ['聯絡資訊', '住址', '工作地址', '以前地址', '住家電話號碼', '行動電話', '即時通帳號', '網路平臺\n申請之帳號', '通訊及戶籍地址',
@@ -57,7 +57,7 @@ def CreatePic():
     
     #在圖片上加入文字
     draw = ImageDraw.Draw(imgPil)
-    font = ImageFont.truetype('SimHei.ttf', 12, encoding='utf-8')
+    font = ImageFont.truetype(r'PhotoOutput\SimHei.ttf', 12, encoding='utf-8')
     DrawPic(draw, font, output_list)
 
     #將PIL轉回Numpy陣列

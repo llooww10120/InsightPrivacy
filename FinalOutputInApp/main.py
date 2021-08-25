@@ -20,10 +20,10 @@ def listToResult(cra, module):
 def DrawPic(draw, font, output):
     #this function will be used until the output of label will be done.
 
-    InsightPrivacy = "InsightPrivacy "
+    InsightPrivacy = "InsightPrivacy"
     position_x = 10
     position_y = 120
-    Tfont = ImageFont.truetype('simhei.ttf', 40, encoding='utf-8')
+    Tfont = ImageFont.truetype(r"FinalOutputInApp\SimHei.ttf", 40, encoding='utf-8')
 
     draw.text((500, 50), InsightPrivacy, font=Tfont, align="center", fill="BLUE", size=10000)
     for index in range(len(output)):
@@ -41,8 +41,8 @@ def AddTransparency(top, bottom):
 
 def CreatePic(output):
 
-    img = cv2.imread('background.jpg')
-    bottomimg = cv2.imread('background.jpg')
+    img = cv2.imread(r"FinalOutputInApp\background.jpg")
+    bottomimg = cv2.imread(r"FinalOutputInApp\background.jpg")
     img = AddTransparency(img, bottomimg)
 
     img = cv2.resize(img, (2000, 1000))
@@ -51,17 +51,17 @@ def CreatePic(output):
 
     draw = ImageDraw.Draw(imgPillow)
 
-    font = ImageFont.truetype('simhei.ttf', 20, encoding='utf-8')
+    font = ImageFont.truetype(r"FinalOutputInApp\SimHei.ttf", 20, encoding='utf-8')
 
     DrawPic(draw, font, output)
 
     img = np.array(imgPillow)
 
-    cv2.imshow('Final', img)
+    # cv2.imshow('Final', img)
 
-    cv2.waitKey(100000)
+    # cv2.waitKey(100000)
 
-    cv2.imwrite('result.jpg', img)
+    cv2.imwrite('result1.jpg', img)
 
 def getListToCreatePic(cra, module):
 

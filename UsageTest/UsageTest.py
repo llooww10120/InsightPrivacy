@@ -53,7 +53,8 @@ def get_predictions(model, dataloader, compute_acc=False):
         # 遍巡整個資料集
         for data in dataloader:
             # 將所有 tensors 移到 GPU 上
-            
+            if next(model.parameters()).is_cuda:
+                data = [t.to("cuda:0") for t in data if t is not None]
             # 別忘記前 3 個 tensors 分別為 tokens, segments 以及 masks
             # 且強烈建議在將這些 tensors 丟入 `model` 時指定對應的參數名稱
             tokens_tensors, segments_tensors, masks_tensors = data[:3]
@@ -82,10 +83,14 @@ def get_predictions(model, dataloader, compute_acc=False):
     return predictions
 #給其他程式呼叫的函式
 def usagetest(text):
+    
     PRETRAINED_MODEL_NAME = "bert-base-chinese"
 
     NUM_LABELS = 2
     model = BertForSequenceClassification.from_pretrained(PRETRAINED_MODEL_NAME, num_labels=NUM_LABELS)
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    print("device:", device)
+    model = model.to(device)
     #path為model所放的位置
     PATH=r"UsageTest\bert20210821.pth"
     #因為gpu不可用時會出錯 因此加上後面的參數強制用cpu跑
