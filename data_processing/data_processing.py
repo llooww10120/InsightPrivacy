@@ -1,44 +1,42 @@
-import csv, os
-from tqdm import tqdm
 
-def readTable():
-    with open(os.path.join('data_processing', 'table.csv'), newline='',encoding="utf-8-sig") as f:
-        
-        rows = csv.reader(f)
-        table = []
+def data_processing(list):
+    table = [
+        ['聯絡資訊', '住址', '工作地址', '以前地址', '住家電話號碼', '行動電話', '即時通帳號', '網路平臺申請之帳號', '通訊及戶籍地址',
+            '相片', '指紋', '電子郵遞地址', '電子簽章', '憑證卡序號', '憑證序號', '提供網路身分認證或申辦查詢服務之紀錄', '電子信箱'],
+        ['財務資訊', '金融機構帳戶之號碼與姓名', '信用卡或簽帳卡之號碼', '保險單號碼', '個人之其他號碼或帳戶'],
+        ['姓名', '生日', '名字'],
+        ['身分證號', '統一編號', '身分證統一編號', '統一證號', '稅籍編號', '保險憑證號碼',
+            '殘障手冊號碼', '退休證之號碼', '證照號碼', '護照號碼', '身分證字號'],
+        ['瀏覽資訊 IP 位址', '設備資訊', '藍芽聯絡人', '郵遞區號', '手機製造商', '手機型號', 'UDID']
+    ]
+    count = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
+    ]
+    output_list = [
+        [],
+        [],
+        [],
+        [],
+        []
+    ]
+    for line in list:
+        for row in range(0, len(table)):
+            for col in range(0, len(table[row])):
+                if table[row][col] in line:
+                    count[row][col] = count[row][col] + 1
 
-        for row in rows:
-            for element in row:
-                table.append(element)
-        return table
-
-def compare(line, table):
-    s = []
-    output = []
-    for item in range(len(table)):
-        if table[item] in line:
-            s.append(line.find(table[item]))
-        else:
-            s.append(-1)
-    sorted_s = sorted(range(len(s)), key = lambda k : s[k]) 
-    for num in sorted_s:
-        if s[num] > 0:
-            output.append(table[num])
-    # print(output)
-    return output
+    for row in range(0, len(count)):
+        for col in range(0, len(count[row])):
+            if count[row][col] > 0:
+                output_list[row].append(table[row][col])
+    
+    return output_list
+    
 
 
-if __name__=="__main__":
-    table = readTable()
-
-    files = next(os.walk(os.path.join('cra', 'result')))[2]
-    for fl in tqdm(files, desc='conver to csv'):
-        # print(fl)
-        with open(os.path.join('data_processing', 'csv', '{}.csv'.format(fl[:3])), 'w', newline='', encoding="utf-8-sig") as f:
-            writer = csv.writer(f)
-            lines = open(os.path.join('cra', 'result', fl),'r', encoding='utf-8-sig').read().split('\n')
-            for line in lines:
-                if line == '' or ' ':
-                    continue
-                else:
-                    writer.writerow([line, compare(line, table), 0])
+# if __name__ == "__main__":
+#     print(data_processing())

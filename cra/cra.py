@@ -38,6 +38,18 @@ def cra(url):
         except ValueError:
             pass
 
+        try:
+            while True:
+                final_out_text.remove('\r')
+        except ValueError:
+            pass
+
+        try:
+            while True:
+                final_out_text.remove('\t')
+        except ValueError:
+            pass
+
         return final_out_text
 
     except:
@@ -46,20 +58,4 @@ def cra(url):
         return final_out_text
 
 # if __name__ == "__main__":
-
 #     cra(input())
-    
-    # privacy link test
-    # fp = open(os.path.join('cra', 'privacy_link.txt'), 'r')
-    # for file in tqdm(fp.readlines(), desc='Browsing'):
-    #     url = file.strip()
-    #     count = count + 1
-    #     with open(os.path.join('cra', 'result', '{:03d}.txt'.format(count)), 'w' , encoding='utf-8') as f:
-    #         # print(count)
-    #         f.write(cra(url))
-
-    # user input url
-    # url = input()
-    # if url!='exit':
-    #     count = count + 1
-    #     cra(url, count)
