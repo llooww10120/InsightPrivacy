@@ -1,8 +1,7 @@
 #main.py
 # -*- coding: utf-8 -*-
-import csv, os
 import numpy as np
-from data_processing.py import data_processing
+from data_processing import data_processing as data_processing
 from cv2 import cv2
 from PIL import ImageFont, ImageDraw, Image
 
