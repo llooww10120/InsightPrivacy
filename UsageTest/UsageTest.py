@@ -1,6 +1,6 @@
 import torch
 from transformers import BertTokenizer
-from IPython.display import clear_output
+# from IPython.display import clear_output
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from torch.nn.utils.rnn import pad_sequence
@@ -22,9 +22,9 @@ class ClauseDataset(Dataset):
         segments_tensor=torch.tensor(segments)
         masks_tensors=torch.tensor(masks)
         if self.label:
-        label_tensor=torch.tensor(self.label[idx])
+            label_tensor=torch.tensor(self.label[idx])
         else:
-        label_tensor=None
+            label_tensor=None
         return(tokens_tensor, segments_tensor, masks_tensors, label_tensor)
     def __len__(self):
         return self.len
