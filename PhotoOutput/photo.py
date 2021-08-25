@@ -6,18 +6,18 @@ from PIL import ImageFont, ImageDraw, Image
 
 #output
 def DrawPic(draw, font, output_list):
-
+    
     Array_Row_Number = len(output_list)
-    Array_Column_Number = len(output_list[0])
 
     InsightPrivacy = "InsightPrivacy "
     draw.text((350, 50), InsightPrivacy, font=font, align="center", fill=(41,36,33), size=1000)
     
     x = 10
     y = 120
-    for index_r in range(Array_Row_Number):
-        for index_c in range(Array_Column_Number):
-            draw.multiline_text((x, y), Array_Column_Number[index_c], fill=(128,128,105), font=font,align='center')
+    for index_r in range(0,Array_Row_Number):
+        Array_Column_Number = len(output_list[0])
+        for index_c in range(0,Array_Column_Number):
+            draw.multiline_text((x, y), output_list[Array_Column_Number], fill=(128,128,105), font=font,align='center')
             x += 160
         x = 10
         y += 100
