@@ -60,7 +60,7 @@ def CreatePic(output_list):
     
     #在圖片上加入文字
     draw = ImageDraw.Draw(imgPil)
-    font = ImageFont.truetype('SimHei.ttf', 15, encoding='utf-8')
+    font = ImageFont.truetype(r'PhotoOutput\SimHei.ttf', 15, encoding='utf-8')
     DrawPic(draw, font, output_list)
 
     #將PIL轉回Numpy陣列
@@ -68,8 +68,8 @@ def CreatePic(output_list):
     # cv2img = np.array(imgPil)
 
     #呈現在螢幕上,除錯
-    cv2.imshow('Ouput', cv2charimg)
-    cv2.waitKey(0)
+    # cv2.imshow('Ouput', cv2charimg)
+    # cv2.waitKey(0)
 
     #輸出圖片檔
     cv2.imwrite('Output.jpg', cv2charimg)
