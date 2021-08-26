@@ -1,5 +1,8 @@
 import pyimgur
-CLIENT_ID = '4510074dfaaf1ad'
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
+CLIENT_ID = config.get('imgur', 'CLIENT_ID')
 def upload2imgur(PATH,title):
     im = pyimgur.Imgur(CLIENT_ID)
     uploaded_image = im.upload_image(PATH, title=title)

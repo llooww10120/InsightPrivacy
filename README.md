@@ -1,6 +1,14 @@
 # InsightPrivacy
+透過Line Bot 將網址透過 NLP 語意分析得到相對簡短的隱私條款
+
 ## LINE BOT
 
+### CreatImage
+| Name        | Input型別   | Output型別  |
+| :-----------: |:-----------:| :-----------:|
+| ImageOutput | string      | list(1d)    |
+
+- 給予event.message.text轉換成圖片後自動上傳至Imgur圖床，並回傳網址
 ## crawler
 | Name        | Input型別   | Output型別  |
 | :-----------: |:-----------:| :-----------:|
