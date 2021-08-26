@@ -41,6 +41,16 @@
 
 ## NLP
 - pytorch 1.9.0+cu111
+## UsageTest
+|Name | Input | Output |
+| -------- | -------- | -------- |
+| usagetest(text) |  list(2d)  | list(1d)  |
+
+輸入為字串形成的list
+ 
+輸出為1與0形成的list 對應輸入的每一個句子
+
+使用時要將.bth檔的model放到此資料夾
 ### model
 [UsageTest_model](https://drive.google.com/drive/u/0/folders/1-4fiUJ98LI-fe_7OVm3Qsu0pDLPO2mTO)
 
