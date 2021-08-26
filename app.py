@@ -5,7 +5,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, messages
 import configparser
-import CreatImage as CI
+from CreatOutput import CreatImage as CI
 app = Flask(__name__)
 
 config = configparser.ConfigParser()

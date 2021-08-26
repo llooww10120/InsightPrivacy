@@ -11,3 +11,5 @@ def getimg(name):
     im = pyimgur.Imgur(CLIENT_ID)
     image = im.get_image(name)
     return image.link
+if __name__=="__main__":
+    print(CLIENT_ID)

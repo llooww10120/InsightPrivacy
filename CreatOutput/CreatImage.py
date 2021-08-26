@@ -3,7 +3,7 @@ from cra import cra as ca
 from FinalOutputInApp import main as Fop
 from PhotoOutput import photo as ph
 from data_processing import data_processing as dp
-import Upload2Imgur as upi
+from CreatOutput import Upload2Imgur as upi
 def ImageOutput(url):
     li=ca.cra(url)
     bert_li=bert.usagetest(li)
