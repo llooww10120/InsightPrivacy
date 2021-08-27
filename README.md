@@ -58,8 +58,15 @@
 | Name        | Input型別   | Output型別  |
 | :-----------: |:-----------:| :-----------:|
 | PhotoOutput | list(2d)| png    |
+| FinalOutputInApp | list(1d), list(1d)| jpg |
 
+-PhotoOutput
 從data_processing中獲取list。
 
 使文字轉為圖片儲存。
+
+-FinalOutputInApp
+從model得到的list與原model處理前的資料處理後得到了圖片
+
+使文字輸出到圖形圖片後呈現給客戶端看
 
