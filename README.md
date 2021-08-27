@@ -2,7 +2,30 @@
 使用者將隱私權網址傳給 Line Bot ，並使用 BERT 技術透過 NLP 語意分析得到簡潔的隱私條款。
 
 ## 內容
-在這份 README 中，InsightPrivacy 
+在這份 README 中，InsightPrivacy 分別使用以下之檔案，並在此作依序概述，詳細於後方中描述。
+
+1. cra.py : 這段程式碼執行爬蟲，將網址內的隱私權條款抓取進而做後續處理。
+2. data_processing.py : 
+3. NLP???
+4. photo.py : 這段程式碼執行
+5. 
+
+## 需求
+>Flask == 2.0.1
+gunicorn == 20.1.0
+line-bot-sdk == 1.19.0  
+beautifulsoup4 == 4.9.3
+requests == 2.24.0
+tqdm == 4.47.0
+Pillow == 8.3.1
+Pillow-PIL == 0.1.dev0
+numpy == 1.21.1
+opencv-python == 4.5.3.56
+configparser == 5.0.0
+pandas == 1.1.5
+torch == 1.9.0+cu102
+transformers == 4.9.2
+
 
 ## CreatOutput
 ### CreatImage
@@ -74,3 +97,4 @@
 
 使文字輸出到圖形圖片後呈現給客戶端看
 
+## 技術展望
