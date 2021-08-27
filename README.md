@@ -67,7 +67,7 @@
 
 -FinalOutputInApp
 從model得到的list與原model處理前的資料處理後得到了圖片
-其中圖片使用了opencv與pillow套件
+其中圖片使用了opencv與pillow和numpy套件
 
 使文字輸出到圖形圖片後呈現給客戶端看
 
