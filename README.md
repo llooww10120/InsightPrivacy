@@ -54,6 +54,12 @@
 ### model
 [UsageTest_model](https://drive.google.com/drive/u/0/folders/1-4fiUJ98LI-fe_7OVm3Qsu0pDLPO2mTO)
 
-## output
+## Output
+| Name        | Input型別   | Output型別  |
+| :-----------: |:-----------:| :-----------:|
+| PhotoOutput | list(2d)| png    |
 
+從data_processing中獲取list。
+
+使文字轉為圖片儲存。
 
