@@ -109,11 +109,6 @@ Bert在使用上可以不用把模型從頭開始訓練，我們可以用Fine-Tu
 使文字輸出到圖形圖片後呈現給客戶端看
 
 ## CreatOutput
-### `CreatImage.py`
-| Name        | Input型別   | Output型別  |
-| :-----------: |:-----------:| :-----------:|
-| ImageOutput | string      | list(1d)    |
-- 給予event.message.text轉換成2張圖片後自動上傳至Imgur圖床，並回傳網址
 ### `Upload2Imgur.py`
 | Name        | Input型別   | Output型別  |
 | :-----------: |:-----------:| :-----------:|
@@ -124,7 +119,11 @@ Bert在使用上可以不用把模型從頭開始訓練，我們可以用Fine-Tu
 | :-----------: |:-----------:| :-----------:|
 | getimg      | string      | string    |
 - 給予image_name回傳圖片網址
-
+## `CreatImage.py`
+| Name        | Input型別   | Output型別  |
+| :-----------: |:-----------:| :-----------:|
+| ImageOutput | string      | list(1d)    |
+- 給予event.message.text轉換成2張圖片後自動上傳至Imgur圖床，並回傳網址
 ## 未來展望
 1.多重目的的模型訓練
     獲取更多資料量，進行多標籤的模型訓練。
