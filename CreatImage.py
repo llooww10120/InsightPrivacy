@@ -1,3 +1,4 @@
+# from UsageTest import UsageTest as bert
 from UsageTest import UsageTest as bert
 from cra import cra as ca
 from FinalOutputInApp import main as Fop
@@ -12,4 +13,4 @@ def ImageOutput(url):
     return [upi.upload2imgur("Output.jpg","Output"),upi.upload2imgur("result.jpg","result")]
 if __name__=="__main__":
     link=ImageOutput("https://www.irentcar.com.tw/privacy.html")
-    print(link[0])
+    print(link)
