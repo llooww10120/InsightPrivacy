@@ -12,5 +12,5 @@ def ImageOutput(url):
     ph.CreatePic(dp.data_processing(li))
     return [upi.upload2imgur("Output.jpg","Output"),upi.upload2imgur("result.jpg","result")]
 if __name__=="__main__":
-    link=ImageOutput("https://www.irentcar.com.tw/privacy.html")
+    link=ImageOutput("https://www.kkbox.com/about/zh-tw/privacy")
     print(link)
