@@ -5,7 +5,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, messages
 import configparser
-from CreatOutput import CreatImage as CI
+import CreatImage as CI
 app = Flask(__name__)
 
 config = configparser.ConfigParser()
@@ -36,8 +36,7 @@ def echo(event):
     message=[]
     message.append(ImageSendMessage(original_content_url=link[0],preview_image_url=link[0]))
     message.append(ImageSendMessage(original_content_url=link[1],preview_image_url=link[1]))
-
-    # message=TextMessage(text=getedata(event.message.text))
+    # message=TextMessage(text=event.message.text)
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
         line_bot_api.reply_message(event.reply_token,message)
 
