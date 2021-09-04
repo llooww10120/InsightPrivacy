@@ -12,25 +12,11 @@ def data_processing(list):
         [ '殘障手冊號碼', '退休證之號碼', '證照號碼', '護照號碼', '身分證字號'],
         [ '瀏覽資訊IP位址', '設備資訊', '藍芽聯絡人', '郵遞區號', '手機製造商', '手機型號', 'UDID']
     ]
-    count = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0],
-        [0, 0],
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0]
-    ]
-    output_list = [
-        [],
-        [],
-        [],
-        [],
-        []
-    ]
+    count=[]
+    output_list=[]
+    for i in range(len(table)):
+        count.append([0 for _ in range(len(table[i]))])
+        output_list.append([])
     for line in list:
         for row in range(0, len(table)):
             for col in range(0, len(table[row])):
@@ -46,5 +32,5 @@ def data_processing(list):
     
 
 
-# if __name__ == "__main__":
-#     print(data_processing())
+if __name__ == "__main__":
+    print()
