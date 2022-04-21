@@ -1,5 +1,5 @@
 # InsightPrivacy
-使用者將隱私權網址傳給 Line Bot ，並使用 BERT 技術透過 NLP 語意分析得到簡潔的隱私條款。
+使用者將隱私權網址傳給 Line Bot ，並使用 BERT 透過 NLP 語意分析得到簡潔的隱私條款。
 ![](https://i.imgur.com/6PXos9R.png)
 
 ## 內容
